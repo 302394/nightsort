@@ -1,0 +1,130 @@
+import random
+
+# Define the number-color assignments
+number_colors = {
+    'WA 9880': 'green',
+    'WA 9887': 'green',
+    'ID 835': 'green',
+    'MT': 'green',
+    'WY 828 V': 'green',
+    'SD GRD + 3': 'green',
+    'ND GRD + 3': 'green',
+    'IA GRD': 'green',
+    'WA 9890': 'red',
+    'WA 9891': 'red',
+    'WA 9910': 'red',
+    'WA 9931': 'red',
+    'ID 836': 'red',
+    'ID 837': 'red',
+    'ID 832': 'red',
+    'ID 833': 'red',
+    'ID 834': 'red',
+    'MT 591 2': 'red',
+    'MT 592 2': 'red',
+    'MT 593 2': 'red',
+    'CA 935 V': 'red',
+    'CA 961': 'red',
+    'CA 9571': 'red',
+    'WY 829 ^': 'red',
+    'AR': 'red',
+    'MEX': 'red',
+    'PRI': 'red',
+    'TN': 'red',
+    'OK': 'red',
+    'TX': 'red',
+    'KS': 'red',
+    'AZ': 'red',
+    'MO': 'red',
+    'NE': 'red',
+    'CO': 'red',
+    'NV': 'red',
+    'NM': 'red',
+    'UT': 'red',
+    'MS': 'red',
+    'LA': 'red',
+    'FL': 'red',
+    'WA 9882': 'yellow',
+    'WA 9911': 'yellow',
+    'WA 9930': 'yellow',
+    'ID 8362': 'yellow',
+    'ID 8383': 'yellow',
+    'OR 893': 'yellow',
+    'OR 9771': 'yellow',
+    'OR 9779': 'yellow',
+    'OR 978': 'yellow',
+    'OR 979': 'yellow',
+    'MI 483 V': 'yellow',
+    'OH': 'yellow',
+    'KY': 'yellow',
+    'MN': 'yellow',
+    'WI': 'yellow',
+    'CAN R,S,T,V': 'yellow',
+    'WA 986': 'orange',
+    'WA 987': 'orange',
+    'WA 9889': 'orange',
+    'WA 9899': 'orange',
+    'WA 9907': 'orange',
+    'WA 9913': 'orange',
+    '9929 P BAG': 'orange',
+    'OR 970–9770': 'orange',
+    'CA 936 ^': 'orange',
+    'AK': 'orange',
+    'HI': 'orange',
+    'ID 8380': 'blue',
+    'MI 484^': 'blue',
+    'NC': 'blue',
+    'SC': 'blue',
+    'NY': 'blue',
+    'MI 484^': 'blue',
+    'IL': 'blue',
+    'IN': 'blue',
+    'AL': 'blue',
+    'GA': 'blue',
+    'MA': 'blue',
+    'MD': 'blue',
+    'NI': 'blue',
+    'RI': 'blue',
+    'CT': 'blue',
+    'VT': 'blue',
+    'PA': 'blue',
+    'VA': 'blue',
+    'WV': 'blue',
+    'DE': 'blue',
+    'OTHER CAN': 'blue',
+    '9929-22 WITH ZIPS 16,19,25,35,38': 'brown',
+    '9929-54 WITH ZIPS 16,19,25,35,38': 'brown',
+    'ID 8388': 'brown',
+    'ID 8385': 'brown',
+    '9929-20': 'purple',
+    '9929-28': 'purple',
+    '9929-25': 'purple',
+    '9929-27': 'purple'
+}
+
+# Randomly order the numbers
+random_numbers = list(number_colors.keys())
+random.shuffle(random_numbers)
+
+# Track incorrect answers
+incorrect_answers = []
+
+# Prompt for color and check if it matches the assigned color
+for number in random_numbers:
+    while True:
+        color = input(f"Enter the color for {number}: ")
+        assigned_color = number_colors[number]
+
+        if color == assigned_color:
+            print("Correct color!")
+            break
+        else:
+            print("Incorrect color! Try again.")
+            incorrect_answers.append(number)
+
+# Print summary of incorrect answers
+print("\nSummary of Incorrect Answers:")
+if incorrect_answers:
+    for number in incorrect_answers:
+        print(f"{number}: {number_colors[number]}")
+else:
+    print("No incorrect answers.")
